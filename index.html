@@ -3,59 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Array Methods</title>
-  <link rel="stylesheet" href="/styles/css/minified/main.min.css">
+  <title>Array Methods - O'quv sayti</title>
+  <link rel="stylesheet" href="./styles/css/minified/main.min.css">
 </head>
 <body>
   <header class="header">
-    <h1>JavaScript Array Methods</h1>
-    <p>Array metodlarini oʻrganing va amaliyotda qoʻllang!</p>
+    <h1>Array Methods</h1>
+    <p>Massiv metodlari haqida qisqacha ma'lumot va foydalanish usullari</p>
   </header>
+
   <main class="main">
-    <section class="method" id="map">
-      <h2>1. map()</h2>
-      <p>
-        <strong>map()</strong> massivi elementlarini qayta ishlaydi va yangi massiv qaytaradi.
-      </p>
-      <pre>
-        <code>
-const numbers = [1, 2, 3, 4];
-const squares = numbers.map(num => num ** 2);
-console.log(squares); // [1, 4, 9, 16]
-        </code>
-      </pre>
+    <section class="method" id="toString">
+      <h2>toString()</h2>
+      <p><strong>Tavsifi:</strong> Massivni satrga (string) aylantiradi.</p>
+      <pre><code>const arr = [1, 2, 3];
+const result = arr.toString();
+console.log(result);
+// Natija: "1,2,3"
+</code></pre>
     </section>
 
-    <section class="method" id="filter">
-      <h2>2. filter()</h2>
-      <p>
-        <strong>filter()</strong> massivi elementlarini shartga qarab saralaydi va yangi massiv yaratadi.
-      </p>
-      <pre>
-        <code>
-const numbers = [1, 2, 3, 4, 5];
-const evenNumbers = numbers.filter(num => num % 2 === 0);
-console.log(evenNumbers); // [2, 4]
-        </code>
-      </pre>
+    <section class="method" id="join">
+      <h2>join()</h2>
+      <p><strong>Tavsifi:</strong> Massiv elementlarini biriktirib, satrga aylantiradi.</p>
+      <pre><code>const arr = [1, 2, 3];
+const result = arr.join('-');
+console.log(result);
+// Natija: "1-2-3"
+</code></pre>
     </section>
 
-    <section class="method" id="reduce">
-      <h2>3. reduce()</h2>
-      <p>
-        <strong>reduce()</strong> massiv elementlarini yigʻadi va bitta qiymat qaytaradi.
-      </p>
-      <pre>
-        <code>
-const numbers = [1, 2, 3, 4];
-const sum = numbers.reduce((total, num) => total + num, 0);
-console.log(sum); // 10
-        </code>
-      </pre>
+    <section class="method" id="pop">
+      <h2>pop()</h2>
+      <p><strong>Tavsifi:</strong> Oxirgi elementni olib tashlaydi va uni qaytaradi.</p>
+      <pre><code>const arr = [1, 2, 3];
+const last = arr.pop();
+console.log(last, arr);
+// Natija: 3, [1, 2]
+</code></pre>
+    </section>
+
+    <section class="method" id="push">
+      <h2>push()</h2>
+      <p><strong>Tavsifi:</strong> Massivga yangi element qo'shadi va yangi uzunlikni qaytaradi.</p>
+      <pre><code>const arr = [1, 2];
+const newLength = arr.push(3);
+console.log(newLength, arr);
+// Natija: 3, [1, 2, 3]
+</code></pre>
+    </section>
+
+    <section class="method" id="shift">
+      <h2>shift()</h2>
+      <p><strong>Tavsifi:</strong> Birinchi elementni olib tashlaydi va uni qaytaradi.</p>
+      <pre><code>const arr = [1, 2, 3];
+const first = arr.shift();
+console.log(first, arr);
+// Natija: 1, [2, 3]
+</code></pre>
+    </section>
+
+    <section class="method" id="unshift">
+      <h2>unshift()</h2>
+      <p><strong>Tavsifi:</strong> Massivning boshiga yangi element qo'shadi.</p>
+      <pre><code>const arr = [2, 3];
+const newLength = arr.unshift(1);
+console.log(newLength, arr);
+// Natija: 3, [1, 2, 3]
+</code></pre>
+    </section>
+
+    <section class="method" id="concat">
+      <h2>concat()</h2>
+      <p><strong>Tavsifi:</strong> Bir nechta massivlarni birlashtiradi.</p>
+      <pre><code>const arr1 = [1, 2];
+const arr2 = [3, 4];
+const result = arr1.concat(arr2);
+console.log(result);
+// Natija: [1, 2, 3, 4]
+</code></pre>
+    </section>
+
+    <section class="method" id="slice">
+      <h2>slice()</h2>
+      <p><strong>Tavsifi:</strong> Massivdan ko'rsatilgan qismini qaytaradi.</p>
+      <pre><code>const arr = [1, 2, 3, 4];
+const part = arr.slice(1, 3);
+console.log(part);
+// Natija: [2, 3]
+</code></pre>
+    </section>
+
+    <section class="method" id="splice">
+      <h2>splice()</h2>
+      <p><strong>Tavsifi:</strong> Elementlarni olib tashlaydi yoki qo'shadi.</p>
+      <pre><code>const arr = [1, 2, 3, 4];
+arr.splice(1, 2, 'a', 'b');
+console.log(arr);
+// Natija: [1, 'a', 'b', 4]
+</code></pre>
+    </section>
+
+    <section class="method" id="length">
+      <h2>length</h2>
+      <p><strong>Tavsifi:</strong> Massiv uzunligini qaytaradi.</p>
+      <pre><code>const arr = [1, 2, 3];
+console.log(arr.length);
+// Natija: 3
+</code></pre>
     </section>
   </main>
+
   <footer class="footer">
-    <p>&copy; 2024 JavaScript Tutorials. Barcha huquqlar himoyalangan.</p>
+    <p>&copy; 2024 Array Methods o'quv sayti</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
